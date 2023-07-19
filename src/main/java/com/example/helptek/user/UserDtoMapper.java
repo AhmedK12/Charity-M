@@ -22,7 +22,7 @@ public class UserDtoMapper  implements Function<User, UserDto> {
         userDto.setLastName(tuple.get("last_name", String.class));
         userDto.setUsername(tuple.get("userName", String.class));
         userDto.setMobile(tuple.get("mobile", String.class));
-        userDto.setVillage(tuple.get("village", Village.class));
+        userDto.setVillage(tuple.get("villages", Village.class));
         return userDto;
     }
 }

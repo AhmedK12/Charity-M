@@ -52,6 +52,7 @@ public class UserNativeRepository implements NativeQueryRepository<UserDto, User
         SelectBuilder countQuBuilder = createCountSelectQuBuilder(TABLE_NAME);
         setWhereClauses(countQuBuilder, searchDto);
         Query countQuery = createCountQuery(entityManager,countQuBuilder);
+
         setParameters(countQuery,searchDto);
         return (Long) countQuery.getSingleResult();
     }
