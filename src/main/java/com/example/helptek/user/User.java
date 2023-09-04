@@ -3,6 +3,8 @@ package com.example.helptek.user;
 import com.example.helptek.role.Role;
 import com.example.helptek.village.Village;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,23 +23,28 @@ import java.util.stream.Collectors;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users", uniqueConstraints = { @UniqueConstraint(name = "uk_user_username", columnNames = { "username" }),
+@Table(name = "user", uniqueConstraints = { @UniqueConstraint(name = "uk_user_username", columnNames = { "username" }),
         @UniqueConstraint(name = "uk_user_email", columnNames = { "email" })
 })
 public class User implements UserDetails {
 
+    @NotBlank
     @Column(name = "email",length = 250, nullable = false,unique = true)
     private String email;
 
+    @NotBlank
     @Column(name = "mobile",length = 10,unique = true)
     private String mobile;
 
+    @NotBlank
     @Column(name = "first_name",length = 50, nullable = false)
-    private String firstName;
+    private String firstname;
 
+    @NotBlank
     @Column(name = "last_name",length = 50, nullable = false)
-    private String lastName;
+    private String lastname;
 
+    @NotBlank
     @Column(name = "username",length = 50, nullable = false)
     private String username;
 

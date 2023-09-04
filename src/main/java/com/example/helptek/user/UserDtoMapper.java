@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class UserDtoMapper  implements Function<User, UserDto> {
     @Override
     public UserDto apply(User user) {
-        return new UserDto(user.getId(), user.getFirstName(),user.getLastName(), user.getUsername(), user.getEmail(), user.getMobile(), user.getVillage(),user.getRoles());
+        return new UserDto(user.getId(), user.getFirstname(),user.getLastname(), user.getUsername(), user.getEmail(), user.getMobile(), user.getVillage(),user.getRoles());
     }
 
     public UserDto tupleToUserDto(Tuple tuple) {

@@ -4,9 +4,11 @@ import com.example.helptek.user.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Data
 @Entity
-@Table(name = "villages")
+@Table(name = "village")
 public class Village {
 
     @Id
@@ -14,7 +16,10 @@ public class Village {
     private Long Id;
     private String name;
     @OneToOne(fetch = FetchType.LAZY)
-    private User representative;
+    private VillageRepresentative representative;
+
+    @OneToMany(mappedBy="village")
+    private Set<User> users;
     private String district;
     private String pinCode;
 

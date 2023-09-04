@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class VillageDtoMapper implements Function<Village, VillageDto> {
     @Override
     public VillageDto apply(Village village) {
-        return new VillageDto(village.getId(),village.getName(),village.getDistrict(),village.getPinCode(),village.getRepresentative());
+        return new VillageDto(village.getId(),village.getName(),village.getDistrict(),village.getPinCode(),village.getRepresentative().getUser());
     }
 
     public VillageDto tupleToVillageDto(Tuple tuple){
